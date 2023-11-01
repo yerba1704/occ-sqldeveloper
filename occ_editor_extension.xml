@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<displays>
+  <!-- severity levels -->
+  <display type="editor" style="Table" enable="true" objectType="blocker">
+    <query>
+      <sql>
+      <![CDATA[
+select v.*
+from 
+	(select * from occ.ruleset where upper(severity)='BLOCKER') r,
+    occ.api.verification_result(i_rule_id_or_code => r.rule_id) v
+order by r.rule_id, 2, 3, 4, 5;
+      ]]>
+      </sql>
+    </query>
+  </display>
+  <display type="editor" style="Table" enable="true" objectType="critical">
+    <query>
+      <sql>
+      <![CDATA[
+select v.*
+from 
+	(select * from occ.ruleset where upper(severity)='CRITICAL') r,
+    occ.api.verification_result(i_rule_id_or_code => r.rule_id) v
+order by r.rule_id, 2, 3, 4, 5;
+      ]]>
+      </sql>
+    </query>
+  </display>
+  <display type="editor" style="Table" enable="true" objectType="major">
+    <query>
+      <sql>
+      <![CDATA[
+select v.*
+from
+	(select * from occ.ruleset where upper(severity)='MAJOR') r,
+    occ.api.verification_result(i_rule_id_or_code => r.rule_id) v
+order by r.rule_id, 2, 3, 4, 5;
+      ]]>
+      </sql>
+    </query>
+  </display>
+  <display type="editor" style="Table" enable="true" objectType="minor">
+    <query>
+      <sql>
+      <![CDATA[
+select v.*
+from 
+	(select * from occ.ruleset where upper(severity)='MINOR') r,
+    occ.api.verification_result(i_rule_id_or_code => r.rule_id) v
+order by r.rule_id, 2, 3, 4, 5;
+      ]]>
+      </sql>
+    </query>
+  </display>
+  <display type="editor" style="Table" enable="true" objectType="info">
+    <query>
+      <sql>
+      <![CDATA[
+select v.*
+from 
+	(select * from occ.ruleset where upper(severity)='INFO') r,
+    occ.api.verification_result(i_rule_id_or_code => r.rule_id) v
+order by r.rule_id, 2, 3, 4, 5;
+      ]]>
+      </sql>
+    </query>
+  </display>
+
+  <!-- sqale characteristics -->
+  <display type="editor" style="Table" enable="true" objectType="changeability">
+    <query>
+      <sql>
+      <![CDATA[
+select v.*
+from 
+	(select * from occ.ruleset where upper(characteristic)='CHANGEABILITY') r,
+    occ.api.verification_result(i_rule_id_or_code => r.rule_id) v
+order by r.rule_id, 2, 3, 4, 5;
+      ]]>
+      </sql>
+    </query>
+  </display>
+  <display type="editor" style="Table" enable="true" objectType="maintainability">
+    <query>
+      <sql>
+      <![CDATA[
+select v.*
+from 
+	(select * from occ.ruleset where upper(characteristic)='MAINTAINABILITY') r,
+    occ.api.verification_result(i_rule_id_or_code => r.rule_id) v
+order by r.rule_id, 2, 3, 4, 5;
+      ]]>
+      </sql>
+    </query>
+  </display>
+  <display type="editor" style="Table" enable="true" objectType="efficiency">
+    <query>
+      <sql>
+      <![CDATA[
+select v.*
+from
+	(select * from occ.ruleset where upper(characteristic)='EFFICIENCY') r,
+    occ.api.verification_result(i_rule_id_or_code => r.rule_id) v
+order by r.rule_id, 2, 3, 4, 5;
+      ]]>
+      </sql>
+    </query>
+  </display>
+  <display type="editor" style="Table" enable="true" objectType="portability">
+    <query>
+      <sql>
+      <![CDATA[
+select v.*
+from 
+	(select * from occ.ruleset where upper(characteristic)='PORTABILITY') r,
+    occ.api.verification_result(i_rule_id_or_code => r.rule_id) v
+order by r.rule_id, 2, 3, 4, 5;
+      ]]>
+      </sql>
+    </query>
+  </display>
+  <display type="editor" style="Table" enable="true" objectType="reliability">
+    <query>
+      <sql>
+      <![CDATA[
+select v.*
+from 
+	(select * from occ.ruleset where upper(characteristic)='RELIABILITY') r,
+    occ.api.verification_result(i_rule_id_or_code => r.rule_id) v
+order by r.rule_id, 2, 3, 4, 5;
+      ]]>
+      </sql>
+    </query>
+  </display>
+  <display type="editor" style="Table" enable="true" objectType="reusability">
+    <query>
+      <sql>
+      <![CDATA[
+select v.*
+from 
+	(select * from occ.ruleset where upper(characteristic)='REUSABILITY') r,
+    occ.api.verification_result(i_rule_id_or_code => r.rule_id) v
+order by r.rule_id, 2, 3, 4, 5;
+      ]]>
+      </sql>
+    </query>
+  </display>
+  <display type="editor" style="Table" enable="true" objectType="security">
+    <query>
+      <sql>
+      <![CDATA[
+select v.*
+from 
+	(select * from occ.ruleset where upper(characteristic)='SECURITY') r,
+    occ.api.verification_result(i_rule_id_or_code => r.rule_id) v
+order by r.rule_id, 2, 3, 4, 5;
+      ]]>
+      </sql>
+    </query>
+  </display>
+  <display type="editor" style="Table" enable="true" objectType="testability">
+    <query>
+      <sql>
+      <![CDATA[
+select v.*
+from 
+	(select * from occ.ruleset where upper(characteristic)='TESTABILITY') r,
+    occ.api.verification_result(i_rule_id_or_code => r.rule_id) v
+order by r.rule_id, 2, 3, 4, 5;
+      ]]>
+      </sql>
+    </query>
+  </display>
+
+  <!-- type classification -->
+  <display type="editor" style="Table" enable="true" objectType="database-object">
+    <query>
+      <sql>
+      <![CDATA[
+select v.*
+from 
+	(select * from occ.ruleset where upper(replace(replace(rule_object,' ','_'),'/'))='DATABASE_OBJECT') r,
+    occ.api.verification_result(i_rule_id_or_code => r.rule_id) v
+order by r.rule_id, 2, 3, 4, 5;
+      ]]>
+      </sql>
+    </query>
+  </display>
+  <display type="editor" style="Table" enable="true" objectType="plsql-unit">
+    <query>
+      <sql>
+      <![CDATA[
+select v.*
+from 
+	(select * from occ.ruleset where upper(replace(replace(rule_object,' ','_'),'/'))='PLSQL_UNIT') r,
+    occ.api.verification_result(i_rule_id_or_code => r.rule_id) v
+order by r.rule_id, 2, 3, 4, 5;
+      ]]>
+      </sql>
+    </query>
+  </display>
+  <display type="editor" style="Table" enable="true" objectType="sql-data-object">
+    <query>
+      <sql>
+      <![CDATA[
+select v.*
+from 
+	(select * from occ.ruleset where upper(replace(replace(rule_object,' ','_'),'/'))='SQL_DATA_OBJECT') r,
+    occ.api.verification_result(i_rule_id_or_code => r.rule_id) v
+order by r.rule_id, 2, 3, 4, 5;
+      ]]>
+      </sql>
+    </query>
+  </display>
+</displays>

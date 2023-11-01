@@ -1,0 +1,185 @@
+<navigator RESOURCE_FILE="oracle.dbtools.raptor.navigator.OracleNavigatorResource">
+  <!-- entry point or root -->
+  <categoryType connType="Oracle" id="occ-category" weight="11">
+    <folder>
+      <icon RSKEY="OracleIcons.EVENTS"></icon>
+      <label RSKEY="ora* CODECOP"/>
+    </folder>
+  </categoryType>
+
+  <!-- parent node level 1 -->
+  <objectType connType="Oracle" id="severity" category="occ-category">
+    <folder>
+      <icon RSKEY="OracleIcons.CONTROLLER"></icon>
+      <label RSKEY="Severity Levels"/>
+      <queries>
+        <query>
+          <sql constrained="true">
+            <![CDATA[
+            SELECT 'Blocker' AS name, 'blocker' as type FROM dual
+              UNION ALL
+            SELECT 'Critical' AS name, 'critical' as type FROM dual
+             UNION ALL
+            SELECT 'Major' AS name, 'major' as type FROM dual
+             UNION ALL
+            SELECT 'Minor' AS name, 'minor' as type FROM dual
+             UNION ALL
+            SELECT 'Info' AS name, 'info' as type FROM dual
+            ]]>
+          </sql>
+        </query>
+      </queries>
+    </folder>
+  </objectType>
+
+  <!-- child leaf 1 level 1 -->
+  <objectType connType="Oracle" id="blocker" weight="10.0">
+    <node>
+      <icon RSKEY="OracleIcons.ERROR"></icon>
+    </node>
+  </objectType>
+  <!-- child leaf 2 level 1 -->
+  <objectType connType="Oracle" id="critical" weight="20.0">
+    <node>
+      <icon RSKEY="OracleIcons.EXCEPTION"></icon>
+    </node>
+  </objectType>
+  <!-- child leaf 3 level 1 -->
+  <objectType connType="Oracle" id="major" weight="30.0">
+    <node>
+      <icon RSKEY="OracleIcons.WARNING"></icon>
+    </node>
+  </objectType>
+  <!-- child leaf 4 level 1 -->
+  <objectType connType="Oracle" id="minor" weight="40.0">
+    <node>
+      <icon RSKEY="OracleIcons.HELP"></icon>
+    </node>
+  </objectType>
+  <!-- child leaf 5 level 1 -->
+  <objectType connType="Oracle" id="info" weight="50.0">
+    <node>
+      <icon RSKEY="OracleIcons.INFO"></icon>
+    </node>
+  </objectType>
+
+  <!-- parent node level 2 -->
+  <objectType connType="Oracle" id="characteristics" category="occ-category">
+    <folder>
+      <icon RSKEY="OracleIcons.SCHEMA_FOLDER"></icon>
+      <label RSKEY="Sqale Characteristics"/>
+      <queries>
+        <query>
+          <sql constrained="true">
+            <![CDATA[
+            SELECT 'Changeability' AS name, 'changeability' as type FROM dual
+              UNION ALL
+            SELECT 'Maintainability' AS name, 'maintainability' as type FROM dual
+              UNION ALL
+            SELECT 'Efficiency' AS name, 'efficiency' as type FROM dual
+              UNION ALL
+            SELECT 'Portability' AS name, 'portability' as type FROM dual
+              UNION ALL
+            SELECT 'Reliability' AS name, 'reliability' as type FROM dual
+              UNION ALL
+            SELECT 'Reusability' AS name, 'reusability' as type FROM dual
+              UNION ALL 
+            SELECT 'Security' AS name, 'security' as type FROM dual
+              UNION ALL 
+            SELECT 'Testability' AS name, 'testability' as type FROM dual
+            ]]>
+          </sql>
+        </query>
+      </queries>
+    </folder>
+  </objectType>
+
+  <!-- child leaf 1 level 2 -->
+  <objectType connType="Oracle" id="changeability">
+    <node>
+      <icon RSKEY="OracleIcons.EDIT"></icon>
+    </node>
+  </objectType>
+  <!-- child leaf 2 level 2 -->
+  <objectType connType="Oracle" id="maintainability">
+    <node>
+      <icon RSKEY="OracleIcons.TEAM"></icon>
+    </node>
+  </objectType>
+  <!-- child leaf 3 level 2 -->
+  <objectType connType="Oracle" id="efficiency">
+    <node>
+      <icon RSKEY="OracleIcons.PIN"></icon>
+    </node>
+  </objectType>
+  <!-- child leaf 4 level 2 -->
+  <objectType connType="Oracle" id="portability">
+    <node>
+      <icon RSKEY="OracleIcons.NAVCONNECTIONS"></icon>
+    </node>
+  </objectType>
+  <!-- child leaf 5 level 2 -->
+  <objectType connType="Oracle" id="reliability">
+    <node>
+      <icon RSKEY="OracleIcons.LINK"></icon>
+    </node>
+  </objectType>
+  <!-- child leaf 6 level 2 -->
+  <objectType connType="Oracle" id="reusability">
+    <node>
+      <icon RSKEY="OracleIcons.RESTOREFROMREVISION"></icon>
+    </node>
+  </objectType>
+  <!-- child leaf 7 level 2 -->
+  <objectType connType="Oracle" id="security">
+    <node>
+      <icon RSKEY="OracleIcons.LISTLOCKICON"></icon>
+    </node>
+  </objectType>
+  <!-- child leaf 8 level 2 -->
+  <objectType connType="Oracle" id="testability">
+    <node>
+      <icon RSKEY="OracleIcons.TASKS"></icon>
+    </node>
+  </objectType>
+
+  <!-- parent node level 3 -->
+  <objectType connType="Oracle" id="classification" category="occ-category">
+    <folder>
+      <icon RSKEY="OracleIcons.TREE"></icon>
+      <label RSKEY="Type Classification"/>
+      <queries>
+        <query>
+          <sql constrained="true">
+            <![CDATA[
+            SELECT 'Database Object' AS name, 'database-object' as type FROM dual
+              UNION ALL
+            SELECT 'PL/SQL Unit' AS name, 'plsql-unit' as type FROM dual
+              UNION ALL
+            SELECT 'SQL Data Object' AS name, 'sql-data-object' as type FROM dual
+            ]]>
+          </sql>
+        </query>
+      </queries>
+    </folder>
+  </objectType>
+
+  <!-- child leaf 1 level 3 -->
+  <objectType connType="Oracle" id="database-object">
+    <node>
+      <icon RSKEY="OracleIcons.DATABASE"></icon>
+    </node>
+  </objectType>
+  <!-- child leaf 2 level 3 -->
+  <objectType connType="Oracle" id="plsql-unit">
+    <node>
+      <icon RSKEY="OracleIcons.PLSQL_PACKAGE"></icon>
+    </node>
+  </objectType>
+  <!-- child leaf 3 level 3 -->
+  <objectType connType="Oracle" id="sql-data-object">
+    <node>
+      <icon RSKEY="OracleIcons.TABLE"></icon>
+    </node>
+  </objectType>
+</navigator>
