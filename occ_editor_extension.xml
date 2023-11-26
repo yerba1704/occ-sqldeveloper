@@ -213,4 +213,17 @@ order by r.rule_id, 2, 3, 4, 5;
       </sql>
     </query>
   </display>
+  <display type="editor" style="Table" enable="true" objectType="apex">
+    <query>
+      <sql>
+      <![CDATA[
+select v.*
+from
+	(select * from occ.ruleset where upper(replace(replace(rule_object,' ','_'),'/'))='APEX') r,
+    occ.api.verification_result(i_rule_id_or_code => r.rule_id) v
+order by r.rule_id, 2, 3, 4, 5;
+      ]]>
+      </sql>
+    </query>
+  </display>
 </displays>

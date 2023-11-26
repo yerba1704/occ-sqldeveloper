@@ -157,6 +157,8 @@
             SELECT 'PL/SQL Unit' AS name, 'plsql-unit' as type FROM dual
               UNION ALL
             SELECT 'SQL Data Object' AS name, 'sql-data-object' as type FROM dual
+              UNION ALL
+            SELECT 'APEX' AS name, 'apex' as type FROM dual
             ]]>
           </sql>
         </query>
@@ -180,6 +182,12 @@
   <objectType connType="Oracle" id="sql-data-object">
     <node>
       <icon RSKEY="OracleIcons.TABLE"></icon>
+    </node>
+  </objectType>
+  <!-- child leaf 4 level 3 -->
+  <objectType connType="Oracle" id="apex">
+    <node>
+      <icon RSKEY="OracleIcons.APPLICATIONS"></icon>
     </node>
   </objectType>
 </navigator>

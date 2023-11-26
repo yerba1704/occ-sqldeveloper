@@ -10,6 +10,8 @@ Add a reference to `occ_navigator_extension.xml` and choose NAVIGATOR as type.
 
 To remove the extension simple remove the file references.
 
+![Screenshot](occ-sqldeveloper.png?raw=true "SQL Developer extension for ora* CODECOP")
+
 ## Version History
 
 November 1, 2023
