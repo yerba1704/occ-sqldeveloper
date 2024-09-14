@@ -192,9 +192,13 @@ order by r.rule_id, 2, 3, 4, 5;
       <sql>
       <![CDATA[
 select v.*
-from 
-	(select * from occ.ruleset where upper(replace(replace(rule_object,' ','_'),'/'))='DATABASE_OBJECT') r,
-    occ.api.verification_result(i_rule_id_or_code => r.rule_id) v
+  from (
+  select * from
+    ( select nvl(documentation_name,type_classification) rule_object
+        from database_objects 
+       where upper(replace(replace(type_classification,' ','_'),'/'))='DATABASE_OBJECT'
+    ) join occ.ruleset using (rule_object)
+  ) r, occ.api.verification_result(i_rule_id_or_code => r.rule_id) v
 order by r.rule_id, 2, 3, 4, 5;
       ]]>
       </sql>
@@ -205,9 +209,13 @@ order by r.rule_id, 2, 3, 4, 5;
       <sql>
       <![CDATA[
 select v.*
-from 
-	(select * from occ.ruleset where upper(replace(replace(rule_object,' ','_'),'/'))='PLSQL_UNIT') r,
-    occ.api.verification_result(i_rule_id_or_code => r.rule_id) v
+  from (
+  select * from
+    ( select nvl(documentation_name,type_classification) rule_object
+        from database_objects 
+       where upper(replace(replace(type_classification,' ','_'),'/'))='PLSQL_UNIT'
+    ) join occ.ruleset using (rule_object)
+  ) r, occ.api.verification_result(i_rule_id_or_code => r.rule_id) v
 order by r.rule_id, 2, 3, 4, 5;
       ]]>
       </sql>
@@ -218,9 +226,13 @@ order by r.rule_id, 2, 3, 4, 5;
       <sql>
       <![CDATA[
 select v.*
-from 
-	(select * from occ.ruleset where upper(replace(replace(rule_object,' ','_'),'/'))='SQL_DATA_OBJECT') r,
-    occ.api.verification_result(i_rule_id_or_code => r.rule_id) v
+  from (
+  select * from
+    ( select nvl(documentation_name,type_classification) rule_object
+        from database_objects 
+       where upper(replace(replace(type_classification,' ','_'),'/'))='SQL_DATA_OBJECT'
+    ) join occ.ruleset using (rule_object)
+  ) r, occ.api.verification_result(i_rule_id_or_code => r.rule_id) v
 order by r.rule_id, 2, 3, 4, 5;
       ]]>
       </sql>
