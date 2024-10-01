@@ -195,7 +195,7 @@ select v.*
   from (
   select * from
     ( select nvl(documentation_name,type_classification) rule_object
-        from database_objects 
+        from occ.database_objects
        where upper(replace(replace(type_classification,' ','_'),'/'))='DATABASE_OBJECT'
     ) join occ.ruleset using (rule_object)
   ) r, occ.api.verification_result(i_rule_id_or_code => r.rule_id) v
@@ -212,7 +212,7 @@ select v.*
   from (
   select * from
     ( select nvl(documentation_name,type_classification) rule_object
-        from database_objects 
+        from occ.database_objects
        where upper(replace(replace(type_classification,' ','_'),'/'))='PLSQL_UNIT'
     ) join occ.ruleset using (rule_object)
   ) r, occ.api.verification_result(i_rule_id_or_code => r.rule_id) v
@@ -229,7 +229,7 @@ select v.*
   from (
   select * from
     ( select nvl(documentation_name,type_classification) rule_object
-        from database_objects 
+        from occ.database_objects
        where upper(replace(replace(type_classification,' ','_'),'/'))='SQL_DATA_OBJECT'
     ) join occ.ruleset using (rule_object)
   ) r, occ.api.verification_result(i_rule_id_or_code => r.rule_id) v
